@@ -5,7 +5,7 @@
         </div>
 
         <table class="table">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
                     <th>No</th>
                     <th>Material</th>

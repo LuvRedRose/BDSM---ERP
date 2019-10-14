@@ -27,7 +27,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -64,6 +64,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Production Menu :</h6>
+            <a class="collapse-item" href="<?php echo base_url().'production/index'; ?>">Production</a>
             <a class="collapse-item" href="<?php echo base_url().'production/raw_material'; ?>">Raw Material</a>
             <a class="collapse-item" href="<?php echo base_url().'production/goods'; ?>">Goods</a>
             <a class="collapse-item" href="<?php echo base_url().'transaction/invoice'; ?>">Transaction</a>

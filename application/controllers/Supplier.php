@@ -18,22 +18,9 @@ class Supplier extends CI_Controller{
 
     public function index(){
         $data['barang'] = $this->m_data->get_data('tbl_supplier')->result();
-        $this->load->view('supplier/s_header');
+        $this->load->view('dashboard/v_header');
         $this->load->view('supplier/s_index', $data);
-        $this->load->view('supplier/s_footer');
+        $this->load->view('dashboard/v_footer');
 
-    }
-
-    function add_cart($id){
-
-        $barang = $this->m_product->find($id);
-        $data = array(
-            'id'      => $barang->input('id'),
-            'qty'     => 1,
-            'price'   => $barang->input('price'),
-            'name'    => $barang->input('material'),
-    );
-    
-    $this->cart->insert($data);
     }
 }

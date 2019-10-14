@@ -35,10 +35,10 @@ class Production extends CI_Controller{
         $this->form_validation->set_rules('stok_in', 'Stok_in', 'required');
         $this->form_validation->set_rules('stok_finish', 'Stok_Finish', 'required');
 
-        if($this->form_validation->ru() != false){
+        if($this->form_validation->run() != false){
 
             $tanggal    = date('Y-m-d');
-            $material   = $this->input->post('material_use');
+            $material   = $this->input->post('material');
             $stok       = $this->input->post('stok_in');
             $finish     = $this->input->post('stok_finish');
 

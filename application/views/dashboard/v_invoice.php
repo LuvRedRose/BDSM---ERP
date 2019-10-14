@@ -7,8 +7,12 @@
             <a href="<?php echo base_url().'supplier'; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-money-bill"></i> Buy Material</a>
             </div>
 
+<<<<<<< Updated upstream
         <table class="table table-responsive">
-            <thead>
+=======
+        <table class="table table-responsive-sm">
+>>>>>>> Stashed changes
+            <thead class="thead-dark">
                 <tr>
                     <th>Id_Invoice</th>
                     <th>Supplier Name</th>
