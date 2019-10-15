@@ -20,6 +20,16 @@ class Transaction extends CI_Controller{
         $this->load->view('dashboard/v_footer');
     }
 
+    function update($id){
+        $where = array (
+            'id_invoice' => $id,
+        );
+        $data['pembelian']= $this->m_data->edit_data($where, 'tbl_pembelian')->result();
+        $this->load->view('dashboard/v_header');
+        $this->load->view('dashboard/v_edit_transaction', $data);
+        $this->load->view('dashboard/v_footer');
+    }
+
     function order_material(){
 
         $this->form_validation->set_rules('supplier', 'Supplier', 'required');
