@@ -54,7 +54,28 @@
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url(); ?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/demo/chart-pie-demo.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#supplier').on('input',function(){
 
+        var id=$(this).val();
+        $.ajax({
+          type      : "POST",
+          url       : "<?php echo base_url('supplier/get_data')?>",
+          dataType  : "JSON",
+          data      : {id_material:id_material},
+          cache     : false,
+          success: function(data){
+            $.each(data,function(id_material, material, price){
+              $('[name="material"]').val(data.material);
+              $('[name="price"]').val(data.price);
+            });
+          }
+        });
+        return false;
+      });
+    });
+  </script>
 </body>
 
 </html>

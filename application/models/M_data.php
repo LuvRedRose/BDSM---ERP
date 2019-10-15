@@ -26,4 +26,18 @@ class M_data extends CI_Model{
     function delete_data($where,$table){
         return $this->db->delete($table,$where);
     }
+
+    function get_data_bykode($id_material){
+        $hsl = $this->db->query("SELECT * FROM tbl_supplier where id='$id_material'");
+        if($hsl->num_rows()>0){
+            foreach ($hsl->result() as $data){
+                $hasil = array(
+                    'id_material' => $data->id_material,
+                    'material' => $data->material,
+                    'price' => $data->price,
+                );
+            }
+        }
+        return $hasil;
+    }
 }

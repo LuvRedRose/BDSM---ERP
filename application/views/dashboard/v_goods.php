@@ -24,7 +24,7 @@
                         <tr>
                             <td scope="row"><?php echo $no++; ?></td>
                             <td><?php echo $material->product_name; ?></td>
-                            <td><?php echo $material->price; ?></td>
+                            <td>Rp. <?php echo number_format($material->price, 0, ',','.'); ?></td>
                             <td><?php echo $material->stok; ?></td>
                             <td>
                                 <a class="btn btn-sm btn-primary" href="<?php echo base_url(). 'production/edit_goods/'.$material->id_product; ?>">Update</a>

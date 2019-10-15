@@ -4,14 +4,9 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Transaction</h1>
-            <a href="<?php echo base_url().'supplier'; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-money-bill"></i> Buy Material</a>
+            <a href="<?php echo base_url().'supplier'; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-money-bill"></i> Supplier</a>
             </div>
-
-<<<<<<< Updated upstream
         <table class="table table-responsive">
-=======
-        <table class="table table-responsive-sm">
->>>>>>> Stashed changes
             <thead class="thead-dark">
                 <tr>
                     <th>Id_Invoice</th>
@@ -34,8 +29,8 @@
                     <td><?php echo $bli->supplier_name; ?></td>
                     <td><?php echo $bli->material; ?></td>
                     <td><?php echo $bli->stok; ?></td>
-                    <td><?php echo $bli->price; ?></td>
-                    <td></td>
+                    <td>Rp. <?php echo number_format($bli->price, 0,',','.'); ?></td>
+                    <td>Rp.  <?php echo number_format($bli->total_harga, 0,',','.'); ?></td>
                     <td><?php echo $bli->tgl_pembelian; ?></td>
                     <td></td>
                     <td>

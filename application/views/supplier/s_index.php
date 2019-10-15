@@ -3,13 +3,13 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">List Supplier</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-shopping-cart"></i> <sup>0</sup></a>
+        <a href="<?php echo base_url().'supplier/form_supplier'; ?>" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-money-bill"></i> Buy Material</a>
     </div>
 
     <div class="row">
 
-            <table class="table table-striped table-inverse">
-                <thead class="thead-inverse">
+            <table class="table table-inverse">
+                <thead class="thead-inverse thead-dark">
                     <tr>
                         <th>No</th>
                         <th>Supplier Name</th>

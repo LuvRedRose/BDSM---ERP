@@ -24,6 +24,7 @@ class Production extends CI_Controller{
 
     function product(){
         $data['raw'] = $this->m_data->get_data('tbl_raw')->result();
+        $data['goods'] = $this->m_data->get_data('tbl_goods')->result();
         $this->load->view('dashboard/v_header');
         $this->load->view('dashboard/v_production', $data);
         $this->load->view('dashboard/v_footer');
@@ -34,17 +35,20 @@ class Production extends CI_Controller{
         $this->form_validation->set_rules('material', 'Material', 'required');
         $this->form_validation->set_rules('stok_in', 'Stok_in', 'required');
         $this->form_validation->set_rules('stok_finish', 'Stok_Finish', 'required');
+        $this->form_validation->set_rules('product', 'Product', 'required');
 
         if($this->form_validation->run() != false){
 
             $tanggal    = date('Y-m-d');
             $material   = $this->input->post('material');
+            $product    = $this->input->post('product');
             $stok       = $this->input->post('stok_in');
             $finish     = $this->input->post('stok_finish');
 
             $data = array(
                 'tgl_pembuatan' => $tanggal,
                 'material_use'  => $material,
+                'finish_good'   => $product,
                 'stok_in'       => $stok,
                 'stok_finish'   => $finish,
             );
