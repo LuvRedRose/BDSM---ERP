@@ -18,6 +18,8 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url(); ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <link href="https://cdn.datatables.net/buttons/1.6.0/css/buttons.dataTables.min.css">
 
 </head>
 

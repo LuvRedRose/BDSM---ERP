@@ -16,7 +16,7 @@ class Production extends CI_Controller{
     }
 
     function index(){
-        $data['produksi'] = $this->db->query('SELECT * FROM tbl_produksi , tbl_raw where material_use=id_material order by id_production desc')->result();
+        $data['produksi'] = $this->db->query('select * from tbl_produksi, tbl_raw, tbl_goods where material_use=id_material and finish_good=id_product order by id_production desc')->result();
         $this->load->view('dashboard/v_header');
         $this->load->view('dashboard/v_history_production', $data);
         $this->load->view('dashboard/v_footer');
@@ -263,7 +263,44 @@ class Production extends CI_Controller{
             }
         }
     
+        function control(){
+            
+            $data['stok'] = $this->m_data->get_data('tbl_control')->result();
+            $this->load->view('dashboard/v_header');
+            $this->load->view('dashboard/v_control', $data);
+            $this->load->view('dashboard/v_footer');
+        }
+
         
+        function add_stok(){
+
+            $this->form_validation->set_rules('material', 'Material', 'required');
+    
+            if($this->form_validation->run() != false){
+    
+                $material           = $this->input->post('material');
+                $in                 = $this->input->post('in');
+                $out                = $this->input->post('out');
+                $reject             = $this->input->post('reject');
+               
+    
+                $data = array (
+                    'material'          => $material,
+                    'stok_in'           => $in,
+                    'stok_out'          => $out,
+                    'stok_reject'       => $reject,
+                );
+    
+                $this->m_data->insert_data($data, 'tbl_control');
+    
+                redirect('production/control');
+            }else{
+                $data['stok'] = $this->m_data->get_data('tbl_control')->result();
+                $this->load->view('dashboard/v_header');
+                $this->load->view('dashboard/v_control', $data);
+                $this->load->view('dashboard/v_footer');
+            }
+        }  
 
 
 }

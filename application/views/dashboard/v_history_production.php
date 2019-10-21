@@ -4,13 +4,14 @@
             <a href="<?php echo base_url().'production/product';?>" class="btn btn-sm btn-primary">Make Finishing Goods</a>
         </div>
 
-        <table class="table">
+        <table class="table table-inverse mt-3" id="production">
             <thead class="thead-dark">
                 <tr>
                     <th>No</th>
                     <th>Material</th>
                     <th>Stok In</th>
                     <th>Finished Goods</th>
+                    <th>Stok Finish</th>
                     <th>Date</th>
                 </tr>
             </thead>
@@ -22,6 +23,7 @@
                     <td scope="row"><?php echo $no++; ?></td>
                     <td><?php echo $pds->material; ?></td>
                     <td><?php echo $pds->stok_in; ?></td>
+                    <td><?php echo $pds->product_name; ?></td>
                     <td><?php echo $pds->stok_finish; ?></td>
                     <td><?php echo date('d/m/Y', strtotime($pds->tgl_pembuatan))?></td>
                 </tr>

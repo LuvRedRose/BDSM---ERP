@@ -30,12 +30,12 @@
             <div class="form-row">
                 <div class="col">
                     <label>Stok In</label>
-                    <input type="number" class="form-control" name="stok_in">
+                    <input type="number" class="form-control" name="stok_in" id="barang_masuk" onkeyup="result();"/>
                     <small class="text-muted"><?php echo form_error('stok_in'); ?></small>
                 </div>
                 <div class="col">
                     <label>Finished Good</label>
-                    <input type="number" class="form-control" name="stok_finish">
+                    <input disable type="number" class="form-control" name="stok_finish" id="barang_jadi"/>
                     <small class="text-muted"><?php echo form_error('stok_finish'); ?></small>
                 </div>
             </div>

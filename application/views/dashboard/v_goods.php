@@ -6,7 +6,7 @@
             <h1 class="h3 mb-0 text-gray-800">Finished Goods</h1>
             <a href="<?php echo base_url().'production/form_goods'; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-money-bill"></i> Add Goods</a>
             </div>
-            <table class="table table-inverse">
+            <table class="table table-inverse mt-3" id="goods">
                 <thead class="thead-dark">
                     <tr>
                         <th>No</th>

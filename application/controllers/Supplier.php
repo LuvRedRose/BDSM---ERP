@@ -32,9 +32,39 @@ class Supplier extends CI_Controller{
         $this->load->view('dashboard/v_footer');
     }
 
-    function get_data(){
-    $id_material = $this->input->post('id_supplier');
-    $data = $this->m_data->get_data_bykode($id_material);
-    echo json_encode($data);
+    function supplier_action(){
+
+        $this->form_validation->set_rules('Supplier', 'supplier', 'required');
+        $this->form_validation->set_rules('Material', 'material', 'required');
+        $this->form_validation->set_rules('Quantity', 'quantity', 'required');
+        $this->form_validation->set_rules('Price', 'price', 'required');
+
+        if($this->form_validation->run() != false){
+
+            $tgl_pembuatan  = date('Y-m-d');
+            $supplier       = $this->input->post('supplier');
+            $material       = $this->input->post('material');
+            $quantity       = $this->input->post('quantity');
+            $price          = $this->input->post('price');
+            $status         = $this->input->post('status');
+
+            $data = array (
+                'id_supplier'       => $supplier,
+                'material'          => $material,
+                'stok'              => $quantity,
+                'price'             => $price,
+                'status'            => $status,
+            );
+
+            $this->m_data->insert_data($data, 'tbl_invoice');
+            redirect('transaction/invoice');
+        }else{
+
+            $data['supplier'] = $this->m_data->get_data('tbl_supplier')->result();
+            $this->load->view('dashboard/v_header');
+            $this->load->view('supplier/s_form_supplier', $data);
+            $this->load->view('dashboard/v_footer');
+                
+        }
     }
 }

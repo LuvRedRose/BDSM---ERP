@@ -6,7 +6,7 @@
             <h1 class="h3 mb-0 text-gray-800">Transaction</h1>
             <a href="<?php echo base_url().'supplier'; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-money-bill"></i> Supplier</a>
             </div>
-        <table class="table table-responsive">
+        <table class="table mt-3" id="invoice">
             <thead class="thead-dark">
                 <tr>
                     <th>Id_Invoice</th>
@@ -34,9 +34,8 @@
                     <td><?php echo $bli->tgl_pembelian; ?></td>
                     <td></td>
                     <td>
-                        <button class="btn btn-sm btn-danger" href="#">Void</button> 
-                        <button class="btn btn-sm btn-success" href="#">Update</button>
-                        <button class="btn btn-sm btn-primary" href="#">Confirm</button>
+                        <a class="btn btn-sm btn-success" href="<?php echo base_url().'transaction/update_invoice/'.$bli->id_invoice; ?>">Update</a>
+                        <button class="btn btn-sm btn-primary mt-1" href="#">Confirm</button>
                     </td>
 
                 </tr>

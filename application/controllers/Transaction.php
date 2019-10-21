@@ -14,7 +14,7 @@ class Transaction extends CI_Controller{
     }
 
     function invoice(){
-        $data['pembelian']= $this->db->query("SELECT supplier_name, a.material, b.price, b.tgl_pembelian, stok, (b.price * stok) as total_harga FROM tbl_supplier a, tbl_pembelian b WHERE a.id_supplier=b.id_supplier order by id_invoice desc")->result();
+        $data['pembelian']= $this->db->query("SELECT id_invoice,supplier_name, a.material, b.price, b.tgl_pembelian, stok, (b.price * stok) as total_harga FROM tbl_supplier a, tbl_pembelian b WHERE a.id_supplier=b.id_supplier order by id_invoice desc")->result();
         $this->load->view('dashboard/v_header');
         $this->load->view('dashboard/v_invoice', $data);
         $this->load->view('dashboard/v_footer');
@@ -30,27 +30,19 @@ class Transaction extends CI_Controller{
         $this->load->view('dashboard/v_footer');
     }
 
-    function order_material(){
+    function update_invoice($id){
+        $where = array(
+            'id_invoice' => $id
+        );
+        $data['invoice'] = $this->m_data->edit_data($where,'tbl_pembelian')->result();
+        $this->load->view('dashboard/v_header');
+        $this->load->view('dashboard/v_edit_invoice', $data);
+        $this->load->view('dashboard/v_footer');
+    }
 
-        $this->form_validation->set_rules('supplier', 'Supplier', 'required');
-        $this->form_validation->set_rules('material', 'Material', 'required');
-        $this->form_validation->set_rules('quantity', 'Quantity', 'required');
-        $this->form_validation->set_rules('price', 'Price', 'required');
+    function update_action(){
 
-        if($this->form_validation->run() != false){
-
-            $supplier       = $this->input->post('supplier');
-            $material       = $this->input->post('material');
-            $quantity       = $this->input->post('quantity');
-            $price          = $this->input->post('price');
-
-           // $data = array(
-           //     'id_supplier'
-            //    'material'
-            //    'stok'
-            //    'price'
-           // );
-        }
+        
     }
 
 }

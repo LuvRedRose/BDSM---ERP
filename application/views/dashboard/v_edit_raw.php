@@ -10,12 +10,13 @@
               <small id="helpId" class="text-muted"><?php echo form_error('material'); ?></small>
             </div>
 
+            
             <div class="form-group">
-              <label for="">stok</label>
-              <input type="text" name="stok" id="" class="form-control"
+              <input type="hidden" name="stok" id="" class="form-control"
                aria-describedby="helpId" value="<?php echo $rw->stok; ?>">
               <small id="helpId" class="text-muted"><?php echo form_error('stok'); ?></small>
             </div>
+
             
 
             <button type="submit" class="btn btn-primary">Save</button>
