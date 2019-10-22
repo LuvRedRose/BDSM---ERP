@@ -20,11 +20,11 @@
             </div>
             
             <div class="form-group">
-              <label for="stok">Stok</label>
-              <input type="number" name="stok" id="stok" class="form-control" placeholder="" aria-describedby="helpId"
+              <!-- <label for="stok">Stok</label> -->
+              <input type="hidden" name="stok" id="stok" class="form-control" placeholder="" aria-describedby="helpId"
               value="<?php echo $gds->stok; ?>">
-              <?php echo form_error('stok'); ?>
-            </div>
+              <!-- <?php echo form_error('stok'); ?>
+            </div> -->
 
             <div class="form-group">
               <label for="price">Price</label>

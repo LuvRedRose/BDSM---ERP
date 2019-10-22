@@ -69,6 +69,7 @@
             <a class="collapse-item" href="<?php echo base_url().'production/index'; ?>">Production</a>
             <a class="collapse-item" href="<?php echo base_url().'production/raw_material'; ?>">Raw Material</a>
             <a class="collapse-item" href="<?php echo base_url().'production/goods'; ?>">Goods</a>
+            <a class="collapse-item" href="<?php echo base_url().'production/control'; ?>">Control</a>
             <a class="collapse-item" href="<?php echo base_url().'supplier/index'; ?>">Supplier</a>
             <a class="collapse-item" href="<?php echo base_url().'transaction/invoice'; ?>">Transaction</a>
           </div>

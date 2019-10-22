@@ -4,7 +4,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Raw Material</h1>
-            <a href="<?php echo base_url().'production/form_raw'; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-money-bill"></i> Add Material</a>
+            <a href="<?php echo base_url().'production/form_raw'; ?>" class="btn-sm btn-primary shadow-sm"><i class="fas fa-money-bill"></i> Add Material</a>
             </div>
             <table class="table table-inverse  mt-3" id="raw">
                 <thead class="thead-dark">

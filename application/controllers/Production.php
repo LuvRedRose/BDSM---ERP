@@ -265,7 +265,7 @@ class Production extends CI_Controller{
     
         function control(){
             
-            $data['stok'] = $this->m_data->get_data('tbl_control')->result();
+            $data['stok'] = $this->db->query('select * from tbl_control order by id_control desc')->result();
             $this->load->view('dashboard/v_header');
             $this->load->view('dashboard/v_control', $data);
             $this->load->view('dashboard/v_footer');

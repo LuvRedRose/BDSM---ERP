@@ -11,7 +11,7 @@
 
             <div class="form-group">
               <label for="">Quantity</label>
-              <input type="text" name="stok" id="" class="form-control" placeholder="Input Quantity" aria-describedby="helpId">
+              <input disabled type="text" name="stok" id="" class="form-control" placeholder="Input Quantity" aria-describedby="helpId" value="0">
               <?php echo form_error('stok'); ?>
             </div>
 

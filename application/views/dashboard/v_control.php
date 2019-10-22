@@ -20,7 +20,13 @@
                           <form method="post" action="<?php echo base_url().'production/add_stok'; ?>">
                             <div class="form-group">
                               <label for="material">Material Name</label>
-                              <input type="text" name="material" id="material" class="form-control" placeholder="Input Material Here.." aria-describedby="helpId">
+                              <select class="form-control" name="material">
+                                    <option selected="selected">-- Choose Material</option>
+                                    <option value="Buah Jeruk">Buah Jeruk</option>
+                                    <option value="Buah Mangga">Buah Mangga</option>
+                                    <option value="Buah Anggur">Buah Anggur</option>
+                                    <option value="Buah Alpukat">Buah Alpukat</option>
+                                </select>
                               <small id="helpId" class="text-muted"></small>
                             </div>
                             <div class="form-group">

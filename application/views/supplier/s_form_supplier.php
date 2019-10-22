@@ -15,6 +15,7 @@
                         <option <?php if(set_value('supplier') == $spl->id_supplier){echo "selected='selected'";} ?>
                         value="<?php echo $spl->id_supplier; ?>"><?php echo $spl->supplier_name; ?></option>
                 <?php } ?>
+                <?php echo form_error('supplier'); ?>
                 </select>
             </div>
             <div class="col">
@@ -22,22 +23,26 @@
                 <select id="barang" class="form-control" name="material">
                     <option value="0" selected="selected">Choose Material</option>
                     <?php foreach($supplier as $spl) {  ?>
-                    <option value="<?php echo $spl->price; ?>"><?php echo $spl->material; ?></option>
+                    <option value="<?php echo $spl->material; ?>"><?php echo $spl->material; ?></option>
                     <?php } ?>
+                    <?php echo form_error('material'); ?>
                 </select>
             </div>
         </div>
         <div class="form-row">
             <div class="col">
                 <label>Quantity</label>
-                <input type="number" name="quantity" id="quantity" class="form-control">
+                <input type="number" name="stok" id="quantity" class="form-control">
+                <?php echo form_error('quantity'); ?>
             </div>
             <div class="col">
                 <label>Price</label>
                 <input type="number" name="price" class="form-control" id="price">
+                <?php echo form_error('price'); ?>
             </div>
         </div>
 
-        <button type="submit" class="btn btn-success mt-5">Save</button>
+        <input type="submit" class="btn btn-info mt-5" name="status" value="outstanding">
+        <input type="submit" class="btn btn-primary mt-5" name="status" value="posted">
     </form>
 </div>

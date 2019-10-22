@@ -31,11 +31,16 @@
                     <td><?php echo $bli->stok; ?></td>
                     <td>Rp. <?php echo number_format($bli->price, 0,',','.'); ?></td>
                     <td>Rp.  <?php echo number_format($bli->total_harga, 0,',','.'); ?></td>
-                    <td><?php echo $bli->tgl_pembelian; ?></td>
-                    <td></td>
+                    <td><?php echo date('d/m/Y', strtotime($bli->tgl_pembelian))?></td>
+                    <td><?php if($bli->status=="posted"){
+                        echo "<span class='badge badge-success'>Posted</span>";
+                    }else{
+                        echo "<span class='badge badge-warning'>Outstanding</span>";
+                    } ?>
+                    </td>
                     <td>
-                        <a class="btn btn-sm btn-success" href="<?php echo base_url().'transaction/update_invoice/'.$bli->id_invoice; ?>">Update</a>
-                        <button class="btn btn-sm btn-primary mt-1" href="#">Confirm</button>
+                        <a class="btn btn-sm btn-secondary" href="<?php echo base_url().'transaction/update_invoice/'.$bli->id_invoice; ?>">Update</a>
+                        <a class="btn btn-sm btn-danger" href="<?php echo base_url().'transaction/delete_invoice/'.$bli->id_invoice; ?>">Delete</a>                        
                     </td>
 
                 </tr>

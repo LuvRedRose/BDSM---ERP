@@ -72,6 +72,7 @@
           'csv', 'excel', 'pdf'
         ]
       });
+    });
   </script>
 </body>
 

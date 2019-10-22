@@ -32,39 +32,40 @@ class Supplier extends CI_Controller{
         $this->load->view('dashboard/v_footer');
     }
 
-    function supplier_action(){
+    public function supplier_action()
+	{
+        $this->form_validation->set_rules('supplier','Supplier','required');
+        $this->form_validation->set_rules('material','Material','required');
+        $this->form_validation->set_rules('stok','Stok','required');
+        $this->form_validation->set_rules('price','Price','required');
 
-        $this->form_validation->set_rules('Supplier', 'supplier', 'required');
-        $this->form_validation->set_rules('Material', 'material', 'required');
-        $this->form_validation->set_rules('Quantity', 'quantity', 'required');
-        $this->form_validation->set_rules('Price', 'price', 'required');
-
-        if($this->form_validation->run() != false){
+		if($this->form_validation->run() != false){
 
             $tgl_pembuatan  = date('Y-m-d');
-            $supplier       = $this->input->post('supplier');
+            $suplier        = $this->input->post('supplier');
             $material       = $this->input->post('material');
-            $quantity       = $this->input->post('quantity');
+            $stok           = $this->input->post('stok');
             $price          = $this->input->post('price');
             $status         = $this->input->post('status');
 
-            $data = array (
-                'id_supplier'       => $supplier,
-                'material'          => $material,
-                'stok'              => $quantity,
-                'price'             => $price,
-                'status'            => $status,
-            );
+			$data = array(
+                'tgl_pembelian' => $tgl_pembuatan,
+                'id_supplier'   => $suplier,
+                'material'      => $material,
+                'stok'          => $stok,
+                'price'         => $price,
+                'status'        => $status,
+			);
 
-            $this->m_data->insert_data($data, 'tbl_invoice');
-            redirect('transaction/invoice');
-        }else{
+			$this->m_data->insert_data($data,'tbl_pembelian');
 
-            $data['supplier'] = $this->m_data->get_data('tbl_supplier')->result();
-            $this->load->view('dashboard/v_header');
-            $this->load->view('supplier/s_form_supplier', $data);
-            $this->load->view('dashboard/v_footer');
-                
-        }
-    }
+			redirect(base_url().'transaction/invoice');
+			
+		}else{
+			$this->load->view('dashboard/v_header');
+			$this->load->view('supplier/s_form_supplier');
+			$this->load->view('dashboard/v_footer');
+		}
+	}
+
 }
