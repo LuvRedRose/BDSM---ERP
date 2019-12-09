@@ -13,6 +13,11 @@ class Maintenance extends CI_Controller{
     }
 
     function index(){
+        $id = $this->input->post('mach_id');
+        $where = array (
+            'mach_id' => $id,
+        );
+        $data['maintenance'] = $this->m_data->edit_data($where,'tbl_machine')->result();
         $data['machine'] = $this->m_data->get_data("tbl_machine")->result();
         $this->load->view('dashboard/v_header');
         $this->load->view('dashboard/v_machine', $data);
@@ -50,13 +55,13 @@ class Maintenance extends CI_Controller{
         }
     }
 
-    function edit($id){
-        $where = array (
-            'mach_id' => $id,
-        );
-        $data['maintenance'] = $this->m_data->edit_data($where,'tbl_machine')->result();
-        $this->load->view('dashboard/v_header');
-        $this->load->view('maintenance/v_edit_maintenance', $data);
-        $this->load->view('dashboard/v_footer');
-    }
+   // function edit($id){
+    //    $where = array (
+    //        'mach_id' => $id,
+    //    );
+    //    $data['maintenance'] = $this->m_data->edit_data($where,'tbl_machine')->result();
+    //    $this->load->view('dashboard/v_header');
+     //   $this->load->view('maintenance/v_edit_maintenance', $data);
+     //   $this->load->view('dashboard/v_footer');
+   // }
 }
