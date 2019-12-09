@@ -13,12 +13,15 @@
                     <tr>
                         <th>No</th>
                         <th>Supplier Name</th>
-                        <th>Address</th>
+                        <th>City</th>
+                        <th>Province</th>
+                        <th>Kode Pos</th>
                         <th>Email</th>
                         <th>Telpon Number</th>
                         <th>Material</th>
                         <th>Price (/kg)</th>
                         <th>Rekening Number</th>
+                        <th>PIC</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -28,12 +31,15 @@
                         <tr>
                             <td scope="row"><?php echo $no++; ?></td>
                             <td><?php echo $brg->supplier_name; ?></td>
-                            <td><?php echo $brg->address_supplier; ?></td>
+                            <td><?php echo $brg->supp_city; ?></td>
+                            <td><?php echo $brg->supp_prov; ?></td>
+                            <td><?php echo $brg->supp_post_code; ?></td>                            
                             <td><?php echo $brg->email; ?></td>
                             <td><?php echo $brg->no_telp; ?></td>
                             <td><?php echo $brg->material; ?></td>
                             <td><?php echo $brg->price; ?></td>
                             <td><?php echo $brg->no_rek; ?></td>
+                            <td><?php echo $brg->supp_pic; ?></td>
                         </tr>
                     <?php } ?>
                     </tbody>

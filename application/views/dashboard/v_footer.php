@@ -66,8 +66,9 @@
   <script src="<?php echo base_url(); ?>assets/js/demo/chart-pie-demo.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
-      $('#raw , #goods, #production, #invoice').DataTable({
-        dom: 'Brti',   
+      $('#raw , #goods, #production, #gudang, #invoice, #shipment, #maintenance').DataTable({
+        dom : '<"top"Bi>rt<"bottom"lp><"clear">',
+        //dom: 'Brtil<"bottom"p><"clear">',  
         buttons: [
           'csv', 'excel', 'pdf'
         ]

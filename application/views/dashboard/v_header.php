@@ -80,15 +80,13 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-money-bill"></i>
-          <span>Finance</span>
+          <span>Warehouse</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Finance Menu : </h6>
-            <a class="collapse-item" href="utilities-color.html">######</a>
-            <a class="collapse-item" href="utilities-border.html">######</a>
-            <a class="collapse-item" href="utilities-animation.html">######</a>
-            <a class="collapse-item" href="utilities-other.html">######</a>
+            <h6 class="collapse-header">Warehouse Menu : </h6>
+            <a class="collapse-item" href="<?php echo base_url().'warehouse/index'; ?>">Warehouse</a>
+            <a class="collapse-item" href="<?php echo base_url().'warehouse/detail'; ?>">Warehouse Detail</a>
           </div>
         </div>
       </li>
@@ -97,12 +95,12 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities1" aria-expanded="true" aria-controls="collapseUtilities1">
           <i class="fas fa-money-check"></i>
-          <span>Marketing</span>
+          <span>Maintenance</span>
         </a>
         <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Marketing Menu : </h6>
-            <a class="collapse-item" href="utilities-color.html">######</a>
+            <h6 class="collapse-header">Maintenance Menu : </h6>
+            <a class="collapse-item" href="<?php echo base_url().'maintenance/index'; ?>">Details</a>
           </div>
         </div>
       </li>
@@ -111,15 +109,12 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2" aria-expanded="true" aria-controls="collapseUtilities2">
         <i class="fas fa-braille"></i>
-          <span>HRD</span>
+          <span>Shipment</span>
         </a>
         <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">HRD Menu : </h6>
-            <a class="collapse-item" href="utilities-color.html">Data Karyawan</a>
-            <a class="collapse-item" href="utilities-border.html">Absen</a>
-            <a class="collapse-item" href="utilities-animation.html">Gaji</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <h6 class="collapse-header">Shipment Menu : </h6>
+            <a class="collapse-item" href="<?php echo base_url().'shipment/index'; ?>">Details</a>
           </div>
         </div>
       </li>

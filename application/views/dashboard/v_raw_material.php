@@ -6,7 +6,7 @@
             <h1 class="h3 mb-0 text-gray-800">Raw Material</h1>
             <a href="<?php echo base_url().'production/form_raw'; ?>" class="btn-sm btn-primary shadow-sm"><i class="fas fa-money-bill"></i> Add Material</a>
             </div>
-            <table class="table table-inverse  mt-3" id="raw">
+            <table class="table table-inverse mt-3" id="raw">
                 <thead class="thead-dark">
                     <tr>
                         <th>No</th>
