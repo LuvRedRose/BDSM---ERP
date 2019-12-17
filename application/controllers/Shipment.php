@@ -129,6 +129,7 @@ function report(){
     require APPPATH.'third_party/PHPExcel/Classes/PHPExcel/Writer/Excel2007.php' ;
 
     $data = $this->m_data->get_data('tbl_shipment')->result();
+    $avg = $this->db->query("SELECT AVG(ship_duration) FROM tbl_shipment");
 
     $objPHPExcel = new PHPExcel();
 
@@ -168,6 +169,10 @@ function report(){
         $row++;
         
     }
+
+        $objPHPExcel->getactiveSheet()->setcellValue('F'.$row, 'Total');
+        $objPHPExcel->getactiveSheet()->setcellValue('G'.$row, $avg);
+
 
     $filename= "Report".'.xlsx';
     $objPHPExcel->getActiveSheet()->setTitle("Report View");

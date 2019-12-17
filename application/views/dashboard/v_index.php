@@ -55,7 +55,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Data Warehouse</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_warehouse; ?>
-                      <a class="btn btn-sm btn-success ml-2" href="<?php echo base_url().'laporan/warehouse_report';?>">Report</a></div>
+                      <a class="btn btn-sm btn-success ml-2" href="<?php echo base_url().'warehouse/report';?>">Report</a></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-home fa-2x text-gray-300"></i>           
