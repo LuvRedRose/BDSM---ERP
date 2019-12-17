@@ -15,7 +15,10 @@ class Dashboard extends CI_Controller{
 
     public function index(){
         $data['total_product']      = $this->m_data->get_data('tbl_goods')->num_rows();  
-        $data['total_pemesanan']    = $this->m_data->get_data('tbl_pembelian')->num_rows();
+        $data['total_shipment']     = $this->m_data->get_data('tbl_shipment')->num_rows();
+        $data['total_warehouse']    = $this->m_data->get_data('tbl_warehouse_detail')->num_rows();
+        $data['total_maintenance']  = $this->m_data->get_data('tbl_machine')->num_rows();
+
         $this->load->view('dashboard/v_header');
         $this->load->view('dashboard/v_index', $data);
         $this->load->view('dashboard/v_footer');

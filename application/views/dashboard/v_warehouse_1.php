@@ -10,6 +10,7 @@
                 <th>No</th>
                 <th>Product Name</th>
                 <th>Quantity</th>
+                <th>Ware Use</th>
                 <th>Cluster</th>
                 <th>Rack</th>
                 <th>Activity</th>
@@ -24,12 +25,13 @@
                 <td><?php echo $no++; ?></td>
                 <td><?php echo $dtl->product_name;?></td>
                 <td><?php echo $dtl->ware_qty; ?></td>
+                <td><?php echo $dtl->ware_name; ?></td>
                 <td><?php echo $dtl->ware_cluster; ?></td>
                 <td><?php echo $dtl->ware_rack; ?></td>
                 <td><?php echo $dtl->ware_activity; ?></td>
                 <td><?php echo date('d-F-Y', strtotime($dtl->ware_date)); ?></td>
             </tr>
-        <?php } ?>
+        <?php } ?> 
         </tbody>
     </table>
 </div>
